@@ -120,7 +120,7 @@ namespace FreeSql
             return _ib.Get(dbkey);
         }
 
-        public bool RemoveRegister(TDBKey dbkey) => _ib.TryRemove(dbkey, false);
+        public bool RemoveRegister(TDBKey dbkey, bool now) => _ib.TryRemove(dbkey, now);
         public bool ExistsRegister(TDBKey dbkey) => _ib.Exists(dbkey);
         public FreeSqlCloud<TDBKey> Register(TDBKey dbkey, Func<IFreeSql> create, TimeSpan? idle = null)
         {
